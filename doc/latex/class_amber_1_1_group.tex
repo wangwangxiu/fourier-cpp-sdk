@@ -1,0 +1,169 @@
+\hypertarget{class_amber_1_1_group}{}\doxysection{Amber\+::Group Class Reference}
+\label{class_amber_1_1_group}\index{Amber::Group@{Amber::Group}}
+
+
+Represents a group of physical Amber actuator, and allows Command, Feedback, and Info objects to be sent to and recieved from the actuator.  
+
+
+
+
+{\ttfamily \#include $<$group.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_amber_1_1_group_a53d99ed7638b9a868ab24e446045d01d}{Group}} (Amber\+Group\+Ptr group, float initial\+\_\+feedback\+\_\+frequency=0.\+0f, int32\+\_\+t initial\+\_\+command\+\_\+lifetime=0)
+\item 
+\mbox{\Hypertarget{class_amber_1_1_group_a53dba937ee9f2732f7df37d165c0d18b}\label{class_amber_1_1_group_a53dba937ee9f2732f7df37d165c0d18b}} 
+\mbox{\hyperlink{class_amber_1_1_group_a53dba937ee9f2732f7df37d165c0d18b}{$\sim$\+Group}} () noexcept
+\begin{DoxyCompactList}\small\item\em Destructor cleans up group. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_a1dcbc66617d33e02c22650520ab067cd}\label{class_amber_1_1_group_a1dcbc66617d33e02c22650520ab067cd}} 
+int \mbox{\hyperlink{class_amber_1_1_group_a1dcbc66617d33e02c22650520ab067cd}{size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of modules in the group. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_a0d822b2be6ac8a3227c4f169cf18ee9b}\label{class_amber_1_1_group_a0d822b2be6ac8a3227c4f169cf18ee9b}} 
+bool \mbox{\hyperlink{class_amber_1_1_group_a0d822b2be6ac8a3227c4f169cf18ee9b}{set\+Command\+Lifetime\+Ms}} (int32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Sets the command lifetime for the modules in this group. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_amber_1_1_group_a5cbdc5e31ae1270facde2c58d37a636a}{send\+Command}} (const \mbox{\hyperlink{class_amber_1_1_group_command}{Group\+Command}} \&group\+\_\+command)
+\begin{DoxyCompactList}\small\item\em Send a command to the given group, requesting an acknowledgement of transmission to be sent back. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_amber_1_1_group_a3e52e6ac46ac50f7cbc35e4cf6518296}{send\+Feedback\+Request}} (Amber\+Feedback\+Code feedback\+Code=Amber\+Feedback\+All)
+\begin{DoxyCompactList}\small\item\em Requests feedback from the group. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_amber_1_1_group_abc94738aad69d9ba14a26cd9ab802a16}{get\+Next\+Feedback}} (\mbox{\hyperlink{class_amber_1_1_group_feedback}{Group\+Feedback}} \&feedback, int32\+\_\+t timeout\+\_\+ms=D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+MS)
+\begin{DoxyCompactList}\small\item\em Returns the most recently stored feedback from a sent feedback request, or returns the next one received (up to the requested timeout). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_amber_1_1_group_add623d0d0419eb0ea6bc595540431621}{set\+Feedback\+Frequency\+Hz}} (float frequency)
+\begin{DoxyCompactList}\small\item\em Sets the frequency of the internal feedback request + callback thread. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_amber_1_1_group_aa4bb46f87083b48c519b0cf439cdc550}{get\+Feedback\+Frequency\+Hz}} ()
+\item 
+void \mbox{\hyperlink{class_amber_1_1_group_af75352aabd2f3fecf7d975445efa2359}{add\+Feedback\+Handler}} (Group\+Feedback\+Handler handler)
+\item 
+void \mbox{\hyperlink{class_amber_1_1_group_afc8faf55d53d1ec59027fa42c4e32df4}{clear\+Feedback\+Handlers}} ()
+\item 
+\mbox{\Hypertarget{class_amber_1_1_group_a623582fe05dd802d4657a6d722a67513}\label{class_amber_1_1_group_a623582fe05dd802d4657a6d722a67513}} 
+Amber\+Feedback\+Error\+Ptr \mbox{\hyperlink{class_amber_1_1_group_a623582fe05dd802d4657a6d722a67513}{get\+Error}} (int idx)
+\begin{DoxyCompactList}\small\item\em Gets the actuator error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_amber_1_1_group_aa4e553491fb70a524528523ac2c87956}\label{class_amber_1_1_group_aa4e553491fb70a524528523ac2c87956}} 
+static const int32\+\_\+t {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+MS} = 500
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_amber_1_1_group_aeb667c64c137cd1def1223432c289175}{callback\+Wrapper}} (Amber\+Group\+Feedback\+Ptr group\+\_\+feedback, void $\ast$user\+\_\+data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a group of physical Amber actuator, and allows Command, Feedback, and Info objects to be sent to and recieved from the actuator. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_amber_1_1_group_a53d99ed7638b9a868ab24e446045d01d}\label{class_amber_1_1_group_a53d99ed7638b9a868ab24e446045d01d}} 
+\index{Amber::Group@{Amber::Group}!Group@{Group}}
+\index{Group@{Group}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{Group()}{Group()}}
+{\footnotesize\ttfamily Amber\+::\+Group\+::\+Group (\begin{DoxyParamCaption}\item[{Amber\+Group\+Ptr}]{group,  }\item[{float}]{initial\+\_\+feedback\+\_\+frequency = {\ttfamily 0.0f},  }\item[{int32\+\_\+t}]{initial\+\_\+command\+\_\+lifetime = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Creates a group from the underlying C-\/style group object. This should only be called to create groups from the lookup class, not from user code! 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_amber_1_1_group_af75352aabd2f3fecf7d975445efa2359}\label{class_amber_1_1_group_af75352aabd2f3fecf7d975445efa2359}} 
+\index{Amber::Group@{Amber::Group}!addFeedbackHandler@{addFeedbackHandler}}
+\index{addFeedbackHandler@{addFeedbackHandler}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{addFeedbackHandler()}{addFeedbackHandler()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+::add\+Feedback\+Handler (\begin{DoxyParamCaption}\item[{Group\+Feedback\+Handler}]{handler }\end{DoxyParamCaption})}
+
+T\+O\+DO\+: \mbox{\Hypertarget{class_amber_1_1_group_afc8faf55d53d1ec59027fa42c4e32df4}\label{class_amber_1_1_group_afc8faf55d53d1ec59027fa42c4e32df4}} 
+\index{Amber::Group@{Amber::Group}!clearFeedbackHandlers@{clearFeedbackHandlers}}
+\index{clearFeedbackHandlers@{clearFeedbackHandlers}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{clearFeedbackHandlers()}{clearFeedbackHandlers()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+::clear\+Feedback\+Handlers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+T\+O\+DO\+: \mbox{\Hypertarget{class_amber_1_1_group_aa4bb46f87083b48c519b0cf439cdc550}\label{class_amber_1_1_group_aa4bb46f87083b48c519b0cf439cdc550}} 
+\index{Amber::Group@{Amber::Group}!getFeedbackFrequencyHz@{getFeedbackFrequencyHz}}
+\index{getFeedbackFrequencyHz@{getFeedbackFrequencyHz}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{getFeedbackFrequencyHz()}{getFeedbackFrequencyHz()}}
+{\footnotesize\ttfamily float Amber\+::\+Group\+::get\+Feedback\+Frequency\+Hz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+T\+O\+DO\+: \mbox{\Hypertarget{class_amber_1_1_group_abc94738aad69d9ba14a26cd9ab802a16}\label{class_amber_1_1_group_abc94738aad69d9ba14a26cd9ab802a16}} 
+\index{Amber::Group@{Amber::Group}!getNextFeedback@{getNextFeedback}}
+\index{getNextFeedback@{getNextFeedback}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{getNextFeedback()}{getNextFeedback()}}
+{\footnotesize\ttfamily bool Amber\+::\+Group\+::get\+Next\+Feedback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_amber_1_1_group_feedback}{Group\+Feedback}} \&}]{feedback,  }\item[{int32\+\_\+t}]{timeout\+\_\+ms = {\ttfamily DEFAULT\+\_\+TIMEOUT\+\_\+MS} }\end{DoxyParamCaption})}
+
+
+
+Returns the most recently stored feedback from a sent feedback request, or returns the next one received (up to the requested timeout). 
+
+Note that a feedback request can be sent either with the send\+Feedback\+Request function.
+
+Warning\+: other data in the provided \textquotesingle{}Feedback\textquotesingle{} object is erased!
+
+
+\begin{DoxyParams}{Parameters}
+{\em feedback} & On success, the group feedback read from the group are written into this structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if feedback was returned, otherwise {\ttfamily false} on failure (i.\+e., connection error or timeout waiting for response). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_amber_1_1_group_a5cbdc5e31ae1270facde2c58d37a636a}\label{class_amber_1_1_group_a5cbdc5e31ae1270facde2c58d37a636a}} 
+\index{Amber::Group@{Amber::Group}!sendCommand@{sendCommand}}
+\index{sendCommand@{sendCommand}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{sendCommand()}{sendCommand()}}
+{\footnotesize\ttfamily bool Amber\+::\+Group\+::send\+Command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_amber_1_1_group_command}{Group\+Command}} \&}]{group\+\_\+command }\end{DoxyParamCaption})}
+
+
+
+Send a command to the given group, requesting an acknowledgement of transmission to be sent back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+command} & The \mbox{\hyperlink{class_amber_1_1_group_command}{Group\+Command}} object containing information to be sent to the group.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an acknowledgement was successfully received (guaranteeing the group received this command), or a negative number for an error otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_amber_1_1_group_a3e52e6ac46ac50f7cbc35e4cf6518296}\label{class_amber_1_1_group_a3e52e6ac46ac50f7cbc35e4cf6518296}} 
+\index{Amber::Group@{Amber::Group}!sendFeedbackRequest@{sendFeedbackRequest}}
+\index{sendFeedbackRequest@{sendFeedbackRequest}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{sendFeedbackRequest()}{sendFeedbackRequest()}}
+{\footnotesize\ttfamily bool Amber\+::\+Group\+::send\+Feedback\+Request (\begin{DoxyParamCaption}\item[{Amber\+Feedback\+Code}]{feedback\+Code = {\ttfamily AmberFeedbackAll} }\end{DoxyParamCaption})}
+
+
+
+Requests feedback from the group. 
+
+Sends a background request to the modules in the group; if/when all modules return feedback, any associated handler functions are called. This returned feedback is also stored to be returned by the next call to get\+Next\+Feedback (any previously returned data is discarded).
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if feedback was request was successfully sent, otherwise {\ttfamily false} on failure (i.\+e., connection error). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_amber_1_1_group_add623d0d0419eb0ea6bc595540431621}\label{class_amber_1_1_group_add623d0d0419eb0ea6bc595540431621}} 
+\index{Amber::Group@{Amber::Group}!setFeedbackFrequencyHz@{setFeedbackFrequencyHz}}
+\index{setFeedbackFrequencyHz@{setFeedbackFrequencyHz}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{setFeedbackFrequencyHz()}{setFeedbackFrequencyHz()}}
+{\footnotesize\ttfamily bool Amber\+::\+Group\+::set\+Feedback\+Frequency\+Hz (\begin{DoxyParamCaption}\item[{float}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Sets the frequency of the internal feedback request + callback thread. 
+
+T\+O\+DO\+: \begin{DoxyReturn}{Returns}
+{\ttfamily true} if the frequency successfully was set, or {\ttfamily false} if the parameter was outside the accepted range (less than zero or faster than supported maximum). 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_amber_1_1_group_aeb667c64c137cd1def1223432c289175}\label{class_amber_1_1_group_aeb667c64c137cd1def1223432c289175}} 
+\index{Amber::Group@{Amber::Group}!callbackWrapper@{callbackWrapper}}
+\index{callbackWrapper@{callbackWrapper}!Amber::Group@{Amber::Group}}
+\doxysubsubsection{\texorpdfstring{callbackWrapper}{callbackWrapper}}
+{\footnotesize\ttfamily void callback\+Wrapper (\begin{DoxyParamCaption}\item[{Amber\+Group\+Feedback\+Ptr}]{group\+\_\+feedback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+T\+O\+DO\+: 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/group.\+hpp\item 
+src/group.\+cpp\end{DoxyCompactItemize}

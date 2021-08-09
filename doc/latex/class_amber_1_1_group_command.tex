@@ -1,0 +1,237 @@
+\hypertarget{class_amber_1_1_group_command}{}\doxysection{Amber\+::Group\+Command Class Reference}
+\label{class_amber_1_1_group_command}\index{Amber::GroupCommand@{Amber::GroupCommand}}
+
+
+A list of Command objects appropriate for sending to a \mbox{\hyperlink{class_amber_1_1_group}{Group}} of modules; the \mbox{\hyperlink{class_amber_1_1_group_command_aeb389a09b2c917f5797a2f9e9f49e146}{size()}} must match the number of modules in the group.  
+
+
+
+
+{\ttfamily \#include $<$group\+Command.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_amber_1_1_group_command_a71c3316c52aabf081f13c2b3496a239f}\label{class_amber_1_1_group_command_a71c3316c52aabf081f13c2b3496a239f}} 
+\mbox{\hyperlink{class_amber_1_1_group_command_a71c3316c52aabf081f13c2b3496a239f}{Group\+Command}} (size\+\_\+t number\+\_\+of\+\_\+modules)
+\begin{DoxyCompactList}\small\item\em Create a group command with the specified number of modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_command_a4b2d895adc86a1ed599804d56dc7a06e}\label{class_amber_1_1_group_command_a4b2d895adc86a1ed599804d56dc7a06e}} 
+\mbox{\hyperlink{class_amber_1_1_group_command_a4b2d895adc86a1ed599804d56dc7a06e}{$\sim$\+Group\+Command}} () noexcept
+\begin{DoxyCompactList}\small\item\em Destructor cleans up group command object as necessary. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_command_aeb389a09b2c917f5797a2f9e9f49e146}\label{class_amber_1_1_group_command_aeb389a09b2c917f5797a2f9e9f49e146}} 
+size\+\_\+t \mbox{\hyperlink{class_amber_1_1_group_command_aeb389a09b2c917f5797a2f9e9f49e146}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of module commands in this group command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_command_a32a558857e37122fbbebf6ce9a43a099}\label{class_amber_1_1_group_command_a32a558857e37122fbbebf6ce9a43a099}} 
+Amber\+Command\+Ptr \mbox{\hyperlink{class_amber_1_1_group_command_a32a558857e37122fbbebf6ce9a43a099}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Access the command for an individual module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_command_a18ace1dd0ade01d9c773dc57e34a0f16}\label{class_amber_1_1_group_command_a18ace1dd0ade01d9c773dc57e34a0f16}} 
+const Amber\+Command\+Ptr \mbox{\hyperlink{class_amber_1_1_group_command_a18ace1dd0ade01d9c773dc57e34a0f16}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Access the command for an individual module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_command_acc19688b3c1d9c540b287abd4ecc9dfb}\label{class_amber_1_1_group_command_acc19688b3c1d9c540b287abd4ecc9dfb}} 
+void \mbox{\hyperlink{class_amber_1_1_group_command_acc19688b3c1d9c540b287abd4ecc9dfb}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all data in this \mbox{\hyperlink{class_amber_1_1_group_command}{Group\+Command}} object; this returns to the state the \mbox{\hyperlink{class_amber_1_1_group_command}{Group\+Command}} was at time of creation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a9984fe7bcbdfaf6b267309be32b4d199}{set\+Position}} (const std\+::vector$<$ float $>$ \&position)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting position commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a13d8785b9204cb6e8653f0bc00e1156b}{set\+Velocity}} (const std\+::vector$<$ float $>$ \&velocity)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting velocity commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_afae73db6538573039ad82f1bfd72bca1}{set\+Current}} (const std\+::vector$<$ float $>$ \&effort)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting current commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a7634bb1faa6ec3b70b3bc90b211fabc1}{enable}} (const std\+::vector$<$ float $>$ \&status)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting enable commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a34811f6f7f11d259759e93d44b1b6923}{reboot}} (const std\+::vector$<$ bool $>$ \&flag)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting reboot commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a23c361c7f24c5d8435a18c1443478041}{get\+Error}} (const std\+::vector$<$ bool $>$ \&flag)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting get\+Error commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_ac127d8dbc97fcaac77d403c803521dd5}{clear\+Error}} (const std\+::vector$<$ bool $>$ \&flag)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting clear\+Error commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_ac21bd900664e65dd90ce5c1d504d9a1e}{reset\+Linear\+Count}} (const std\+::vector$<$ float $>$ \&linear\+Count)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting reset\+Linear\+Count commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a959af20c1b167b2af5cf5c0872e01a16}{set\+Montion\+Ctrl\+Config}} (const std\+::vector$<$ Motion\+Controller\+Config $\ast$ $>$ \&config)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting set\+Montion\+Ctrl\+Config commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a958eff0e930b918b460c106fba9f1296}{set\+Motor\+Config}} (const std\+::vector$<$ Motor\+Config $\ast$ $>$ \&config)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting set\+Motor\+Config commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a36b4f7d110a5b56da173866b3b63fff9}{set\+Trap\+Traj}} (const std\+::vector$<$ Trap\+Traj $\ast$ $>$ \&config)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting set\+Trap\+Traj commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a2db89cef912d46b5f4f2ec9a986ad76b}{save\+Config}} (const std\+::vector$<$ bool $>$ \&flag)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting save\+Config commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_ad4a12a125d03623199e071fd8d6e15db}{set\+Network\+Setting}} (const std\+::vector$<$ Network\+Setting $\ast$ $>$ \&config)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting set\+Network\+Setting commands from vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_group_command_a3fb2e50cc0fba60bb2be2372dbae0040}{ctrl\+Box\+Enable}} (const std\+::vector$<$ float $>$ \&status)
+\begin{DoxyCompactList}\small\item\em Convenience function for setting ctrl\+Box\+Enable commands from vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_command_a3595b5637ef0c806b15d95d2aaa6dea5}\label{class_amber_1_1_group_command_a3595b5637ef0c806b15d95d2aaa6dea5}} 
+void {\bfseries set\+Latency\+Test} (const std\+::vector$<$ bool $>$ \&flag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Amber\+Group\+Command\+Ptr \mbox{\hyperlink{class_amber_1_1_group_command_a0ab9b1698febcfd7ed6118ff969d3bcb}{internal\+\_\+}}
+\item 
+const size\+\_\+t \mbox{\hyperlink{class_amber_1_1_group_command_a7e825752cbe3a7d678123e1675449e51}{number\+\_\+of\+\_\+modules\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A list of Command objects appropriate for sending to a \mbox{\hyperlink{class_amber_1_1_group}{Group}} of modules; the \mbox{\hyperlink{class_amber_1_1_group_command_aeb389a09b2c917f5797a2f9e9f49e146}{size()}} must match the number of modules in the group. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_amber_1_1_group_command_ac127d8dbc97fcaac77d403c803521dd5}\label{class_amber_1_1_group_command_ac127d8dbc97fcaac77d403c803521dd5}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!clearError@{clearError}}
+\index{clearError@{clearError}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{clearError()}{clearError()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::clear\+Error (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{flag }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting clear\+Error commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a3fb2e50cc0fba60bb2be2372dbae0040}\label{class_amber_1_1_group_command_a3fb2e50cc0fba60bb2be2372dbae0040}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!ctrlBoxEnable@{ctrlBoxEnable}}
+\index{ctrlBoxEnable@{ctrlBoxEnable}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{ctrlBoxEnable()}{ctrlBoxEnable()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::ctrl\+Box\+Enable (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{status }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting ctrl\+Box\+Enable commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a7634bb1faa6ec3b70b3bc90b211fabc1}\label{class_amber_1_1_group_command_a7634bb1faa6ec3b70b3bc90b211fabc1}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!enable@{enable}}
+\index{enable@{enable}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::enable (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{status }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting enable commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. enable is (nan continue， 0 disable， 1 enable),so choose float type. \mbox{\Hypertarget{class_amber_1_1_group_command_a23c361c7f24c5d8435a18c1443478041}\label{class_amber_1_1_group_command_a23c361c7f24c5d8435a18c1443478041}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!getError@{getError}}
+\index{getError@{getError}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::get\+Error (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{flag }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting get\+Error commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a34811f6f7f11d259759e93d44b1b6923}\label{class_amber_1_1_group_command_a34811f6f7f11d259759e93d44b1b6923}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!reboot@{reboot}}
+\index{reboot@{reboot}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{reboot()}{reboot()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::reboot (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{flag }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting reboot commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_ac21bd900664e65dd90ce5c1d504d9a1e}\label{class_amber_1_1_group_command_ac21bd900664e65dd90ce5c1d504d9a1e}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!resetLinearCount@{resetLinearCount}}
+\index{resetLinearCount@{resetLinearCount}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{resetLinearCount()}{resetLinearCount()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::reset\+Linear\+Count (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{linear\+Count }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting reset\+Linear\+Count commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a2db89cef912d46b5f4f2ec9a986ad76b}\label{class_amber_1_1_group_command_a2db89cef912d46b5f4f2ec9a986ad76b}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!saveConfig@{saveConfig}}
+\index{saveConfig@{saveConfig}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{saveConfig()}{saveConfig()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::save\+Config (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ bool $>$ \&}]{flag }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting save\+Config commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_afae73db6538573039ad82f1bfd72bca1}\label{class_amber_1_1_group_command_afae73db6538573039ad82f1bfd72bca1}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!setCurrent@{setCurrent}}
+\index{setCurrent@{setCurrent}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{setCurrent()}{setCurrent()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::set\+Current (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{effort }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting current commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a959af20c1b167b2af5cf5c0872e01a16}\label{class_amber_1_1_group_command_a959af20c1b167b2af5cf5c0872e01a16}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!setMontionCtrlConfig@{setMontionCtrlConfig}}
+\index{setMontionCtrlConfig@{setMontionCtrlConfig}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{setMontionCtrlConfig()}{setMontionCtrlConfig()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::set\+Montion\+Ctrl\+Config (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Motion\+Controller\+Config $\ast$ $>$ \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting set\+Montion\+Ctrl\+Config commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a958eff0e930b918b460c106fba9f1296}\label{class_amber_1_1_group_command_a958eff0e930b918b460c106fba9f1296}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!setMotorConfig@{setMotorConfig}}
+\index{setMotorConfig@{setMotorConfig}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{setMotorConfig()}{setMotorConfig()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::set\+Motor\+Config (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Motor\+Config $\ast$ $>$ \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting set\+Motor\+Config commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_ad4a12a125d03623199e071fd8d6e15db}\label{class_amber_1_1_group_command_ad4a12a125d03623199e071fd8d6e15db}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!setNetworkSetting@{setNetworkSetting}}
+\index{setNetworkSetting@{setNetworkSetting}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{setNetworkSetting()}{setNetworkSetting()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::set\+Network\+Setting (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Network\+Setting $\ast$ $>$ \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting set\+Network\+Setting commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a9984fe7bcbdfaf6b267309be32b4d199}\label{class_amber_1_1_group_command_a9984fe7bcbdfaf6b267309be32b4d199}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::set\+Position (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting position commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a36b4f7d110a5b56da173866b3b63fff9}\label{class_amber_1_1_group_command_a36b4f7d110a5b56da173866b3b63fff9}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!setTrapTraj@{setTrapTraj}}
+\index{setTrapTraj@{setTrapTraj}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{setTrapTraj()}{setTrapTraj()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::set\+Trap\+Traj (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Trap\+Traj $\ast$ $>$ \&}]{config }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting set\+Trap\+Traj commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. \mbox{\Hypertarget{class_amber_1_1_group_command_a13d8785b9204cb6e8653f0bc00e1156b}\label{class_amber_1_1_group_command_a13d8785b9204cb6e8653f0bc00e1156b}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!setVelocity@{setVelocity}}
+\index{setVelocity@{setVelocity}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}}
+{\footnotesize\ttfamily void Amber\+::\+Group\+Command\+::set\+Velocity (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{velocity }\end{DoxyParamCaption})}
+
+
+
+Convenience function for setting velocity commands from vectors. 
+
+Note that if the vector is not the correct link, no action is taken. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_amber_1_1_group_command_a0ab9b1698febcfd7ed6118ff969d3bcb}\label{class_amber_1_1_group_command_a0ab9b1698febcfd7ed6118ff969d3bcb}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!internal\_@{internal\_}}
+\index{internal\_@{internal\_}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{internal\_}{internal\_}}
+{\footnotesize\ttfamily Amber\+Group\+Command\+Ptr Amber\+::\+Group\+Command\+::internal\+\_\+}
+
+C-\/style group command object. N\+O\+TE\+: this should not be used except by library functions! \mbox{\Hypertarget{class_amber_1_1_group_command_a7e825752cbe3a7d678123e1675449e51}\label{class_amber_1_1_group_command_a7e825752cbe3a7d678123e1675449e51}} 
+\index{Amber::GroupCommand@{Amber::GroupCommand}!number\_of\_modules\_@{number\_of\_modules\_}}
+\index{number\_of\_modules\_@{number\_of\_modules\_}!Amber::GroupCommand@{Amber::GroupCommand}}
+\doxysubsubsection{\texorpdfstring{number\_of\_modules\_}{number\_of\_modules\_}}
+{\footnotesize\ttfamily const size\+\_\+t Amber\+::\+Group\+Command\+::number\+\_\+of\+\_\+modules\+\_\+}
+
+The number of modules in this group command. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/group\+Command.\+hpp\item 
+src/group\+Command.\+cpp\end{DoxyCompactItemize}

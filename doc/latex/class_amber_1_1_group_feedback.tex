@@ -1,0 +1,60 @@
+\hypertarget{class_amber_1_1_group_feedback}{}\doxysection{Amber\+::Group\+Feedback Class Reference}
+\label{class_amber_1_1_group_feedback}\index{Amber::GroupFeedback@{Amber::GroupFeedback}}
+
+
+A list of Feedback objects that can be received from a \mbox{\hyperlink{class_amber_1_1_group}{Group}} of modules; the \mbox{\hyperlink{class_amber_1_1_group_feedback_a83658abcb5844ddc13891208945504c8}{size()}} must match the number of modules in the group.  
+
+
+
+
+{\ttfamily \#include $<$group\+Feedback.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_amber_1_1_group_feedback_a43d8594a6d5fec75319ab360bafd88bb}\label{class_amber_1_1_group_feedback_a43d8594a6d5fec75319ab360bafd88bb}} 
+\mbox{\hyperlink{class_amber_1_1_group_feedback_a43d8594a6d5fec75319ab360bafd88bb}{Group\+Feedback}} (size\+\_\+t number\+\_\+of\+\_\+modules)
+\begin{DoxyCompactList}\small\item\em Create a group feedback with the specified number of modules. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_amber_1_1_group_feedback_ac6a99c7cc5dd2dbb861f5cd32f0b290d}{Group\+Feedback}} (Amber\+Group\+Feedback\+Ptr group\+\_\+feedback)
+\item 
+\mbox{\Hypertarget{class_amber_1_1_group_feedback_ad5db29a77d1823c5fe222f95ffb9b0aa}\label{class_amber_1_1_group_feedback_ad5db29a77d1823c5fe222f95ffb9b0aa}} 
+\mbox{\hyperlink{class_amber_1_1_group_feedback_ad5db29a77d1823c5fe222f95ffb9b0aa}{$\sim$\+Group\+Feedback}} () noexcept
+\begin{DoxyCompactList}\small\item\em Destructor cleans up group feedback object as necessary. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_feedback_a83658abcb5844ddc13891208945504c8}\label{class_amber_1_1_group_feedback_a83658abcb5844ddc13891208945504c8}} 
+size\+\_\+t \mbox{\hyperlink{class_amber_1_1_group_feedback_a83658abcb5844ddc13891208945504c8}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of module feedbacks in this group feedback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_group_feedback_abe69b78c2bb029a3ade84ad8ee4ea3ff}\label{class_amber_1_1_group_feedback_abe69b78c2bb029a3ade84ad8ee4ea3ff}} 
+const Amber\+Feedback\+Ptr \& \mbox{\hyperlink{class_amber_1_1_group_feedback_abe69b78c2bb029a3ade84ad8ee4ea3ff}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Access the feedback for an individual module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Amber\+Group\+Feedback\+Ptr \mbox{\hyperlink{class_amber_1_1_group_feedback_ac475b865e0c2a3eb2a3a4da4c2720d68}{internal\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A list of Feedback objects that can be received from a \mbox{\hyperlink{class_amber_1_1_group}{Group}} of modules; the \mbox{\hyperlink{class_amber_1_1_group_feedback_a83658abcb5844ddc13891208945504c8}{size()}} must match the number of modules in the group. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_amber_1_1_group_feedback_ac6a99c7cc5dd2dbb861f5cd32f0b290d}\label{class_amber_1_1_group_feedback_ac6a99c7cc5dd2dbb861f5cd32f0b290d}} 
+\index{Amber::GroupFeedback@{Amber::GroupFeedback}!GroupFeedback@{GroupFeedback}}
+\index{GroupFeedback@{GroupFeedback}!Amber::GroupFeedback@{Amber::GroupFeedback}}
+\doxysubsubsection{\texorpdfstring{GroupFeedback()}{GroupFeedback()}}
+{\footnotesize\ttfamily Amber\+::\+Group\+Feedback\+::\+Group\+Feedback (\begin{DoxyParamCaption}\item[{Amber\+Group\+Feedback\+Ptr}]{group\+\_\+feedback }\end{DoxyParamCaption})}
+
+T\+O\+DO\+: 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_amber_1_1_group_feedback_ac475b865e0c2a3eb2a3a4da4c2720d68}\label{class_amber_1_1_group_feedback_ac475b865e0c2a3eb2a3a4da4c2720d68}} 
+\index{Amber::GroupFeedback@{Amber::GroupFeedback}!internal\_@{internal\_}}
+\index{internal\_@{internal\_}!Amber::GroupFeedback@{Amber::GroupFeedback}}
+\doxysubsubsection{\texorpdfstring{internal\_}{internal\_}}
+{\footnotesize\ttfamily Amber\+Group\+Feedback\+Ptr Amber\+::\+Group\+Feedback\+::internal\+\_\+}
+
+C-\/style group feedback object. N\+O\+TE\+: this should not be used except by library functions! 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/group\+Feedback.\+hpp\item 
+src/group\+Feedback.\+cpp\end{DoxyCompactItemize}

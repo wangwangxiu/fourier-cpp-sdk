@@ -1,0 +1,126 @@
+\hypertarget{class_amber_1_1_lookup}{}\doxysection{Amber\+::Lookup Class Reference}
+\label{class_amber_1_1_lookup}\index{Amber::Lookup@{Amber::Lookup}}
+
+
+Maintains a registry of network-\/connected modules and returns \mbox{\hyperlink{class_amber_1_1_group}{Group}} objects to the user.  
+
+
+
+
+{\ttfamily \#include $<$lookup.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_amber_1_1_lookup_1_1_entry_list}{Entry\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_amber_1_1_lookup_a6fc9ea1b87ab1d2aa25595aad60352bc}{Lookup}} (std\+::string $\ast$addr=nullptr)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{class_amber_1_1_lookup}{Lookup}} object which can create Module and \mbox{\hyperlink{class_amber_1_1_group}{Group}} references. Typically, only one \mbox{\hyperlink{class_amber_1_1_lookup}{Lookup}} object should exist at a time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_lookup_a0709f35e409e68d84af2adc0001583fd}\label{class_amber_1_1_lookup_a0709f35e409e68d84af2adc0001583fd}} 
+\mbox{\hyperlink{class_amber_1_1_lookup_a0709f35e409e68d84af2adc0001583fd}{$\sim$\+Lookup}} () noexcept
+\begin{DoxyCompactList}\small\item\em Destructor frees all resources created by \mbox{\hyperlink{class_amber_1_1_lookup}{Lookup}} object, and stops the background query thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_amber_1_1_lookup_ae446cfce9a1e06a27a5b24ff86f13227}{set\+Net\+Works}} (std\+::string networks)
+\begin{DoxyCompactList}\small\item\em Sets the broadcast address for the lookup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_lookup_a58f4295f8e3d5f6b3793a8e6569f917e}\label{class_amber_1_1_lookup_a58f4295f8e3d5f6b3793a8e6569f917e}} 
+std\+::string \mbox{\hyperlink{class_amber_1_1_lookup_a58f4295f8e3d5f6b3793a8e6569f917e}{get\+Ctrl\+Box\+IP}} ()
+\begin{DoxyCompactList}\small\item\em Get Ctrl\+Box ip address. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_amber_1_1_group}{Group}} $>$ \mbox{\hyperlink{class_amber_1_1_lookup_a2ef84c77a117a37b89fa7e10e07c65b6}{get\+Group\+From\+Family}} (const std\+::string \&family, int32\+\_\+t timeout\+\_\+ms=D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT)
+\begin{DoxyCompactList}\small\item\em Get a group from all known modules with the given family. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_amber_1_1_lookup_a5414c5a0b8c05cb7abe02b0d0f373650}{get\+Lookup\+Frequency\+Hz}} () const
+\begin{DoxyCompactList}\small\item\em Gets the rate \mbox{[}Hz\mbox{]} at which \char`\"{}discovery\char`\"{} packets are broadcast. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_amber_1_1_lookup_a5154c0dcd945c452447e029e37a8156c}{set\+Lookup\+Frequency\+Hz}} (float frequency)
+\begin{DoxyCompactList}\small\item\em Sets the lookup rate \mbox{[}Hz\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_amber_1_1_lookup_a202f8f0cc19a291a142b928e24b3cd62}\label{class_amber_1_1_lookup_a202f8f0cc19a291a142b928e24b3cd62}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_amber_1_1_lookup_1_1_entry_list}{Entry\+List}} $>$ {\bfseries get\+Entry\+List} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Maintains a registry of network-\/connected modules and returns \mbox{\hyperlink{class_amber_1_1_group}{Group}} objects to the user. 
+
+Only one \mbox{\hyperlink{class_amber_1_1_lookup}{Lookup}} object is needed per application. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_amber_1_1_lookup_a6fc9ea1b87ab1d2aa25595aad60352bc}\label{class_amber_1_1_lookup_a6fc9ea1b87ab1d2aa25595aad60352bc}} 
+\index{Amber::Lookup@{Amber::Lookup}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Amber::Lookup@{Amber::Lookup}}
+\doxysubsubsection{\texorpdfstring{Lookup()}{Lookup()}}
+{\footnotesize\ttfamily Amber\+::\+Lookup\+::\+Lookup (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{addr = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{class_amber_1_1_lookup}{Lookup}} object which can create Module and \mbox{\hyperlink{class_amber_1_1_group}{Group}} references. Typically, only one \mbox{\hyperlink{class_amber_1_1_lookup}{Lookup}} object should exist at a time. 
+
+Note that this call invokes a background thread to query the network for modules at regular intervals. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_amber_1_1_lookup_a2ef84c77a117a37b89fa7e10e07c65b6}\label{class_amber_1_1_lookup_a2ef84c77a117a37b89fa7e10e07c65b6}} 
+\index{Amber::Lookup@{Amber::Lookup}!getGroupFromFamily@{getGroupFromFamily}}
+\index{getGroupFromFamily@{getGroupFromFamily}!Amber::Lookup@{Amber::Lookup}}
+\doxysubsubsection{\texorpdfstring{getGroupFromFamily()}{getGroupFromFamily()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_amber_1_1_group}{Group}} $>$ Amber\+::\+Lookup\+::get\+Group\+From\+Family (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{family,  }\item[{int32\+\_\+t}]{timeout\+\_\+ms = {\ttfamily DEFAULT\+\_\+TIMEOUT} }\end{DoxyParamCaption})}
+
+
+
+Get a group from all known modules with the given family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em family} & The family of each of the desired group modules. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared\+\_\+ptr with no reference if no group found in allotted time, or reference to a newly allocated group object corresponding to the given parameters otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_amber_1_1_lookup_a5414c5a0b8c05cb7abe02b0d0f373650}\label{class_amber_1_1_lookup_a5414c5a0b8c05cb7abe02b0d0f373650}} 
+\index{Amber::Lookup@{Amber::Lookup}!getLookupFrequencyHz@{getLookupFrequencyHz}}
+\index{getLookupFrequencyHz@{getLookupFrequencyHz}!Amber::Lookup@{Amber::Lookup}}
+\doxysubsubsection{\texorpdfstring{getLookupFrequencyHz()}{getLookupFrequencyHz()}}
+{\footnotesize\ttfamily float Amber\+::\+Lookup\+::get\+Lookup\+Frequency\+Hz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the rate \mbox{[}Hz\mbox{]} at which \char`\"{}discovery\char`\"{} packets are broadcast. 
+
+Defaults to 5 Hz. \mbox{\Hypertarget{class_amber_1_1_lookup_a5154c0dcd945c452447e029e37a8156c}\label{class_amber_1_1_lookup_a5154c0dcd945c452447e029e37a8156c}} 
+\index{Amber::Lookup@{Amber::Lookup}!setLookupFrequencyHz@{setLookupFrequencyHz}}
+\index{setLookupFrequencyHz@{setLookupFrequencyHz}!Amber::Lookup@{Amber::Lookup}}
+\doxysubsubsection{\texorpdfstring{setLookupFrequencyHz()}{setLookupFrequencyHz()}}
+{\footnotesize\ttfamily bool Amber\+::\+Lookup\+::set\+Lookup\+Frequency\+Hz (\begin{DoxyParamCaption}\item[{float}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Sets the lookup rate \mbox{[}Hz\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & The rate at which \char`\"{}discovery\char`\"{} packets get broadcast on the network to search for modules.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure (e.\+g., invalid frequency) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_amber_1_1_lookup_ae446cfce9a1e06a27a5b24ff86f13227}\label{class_amber_1_1_lookup_ae446cfce9a1e06a27a5b24ff86f13227}} 
+\index{Amber::Lookup@{Amber::Lookup}!setNetWorks@{setNetWorks}}
+\index{setNetWorks@{setNetWorks}!Amber::Lookup@{Amber::Lookup}}
+\doxysubsubsection{\texorpdfstring{setNetWorks()}{setNetWorks()}}
+{\footnotesize\ttfamily void Amber\+::\+Lookup\+::set\+Net\+Works (\begin{DoxyParamCaption}\item[{std\+::string}]{networks }\end{DoxyParamCaption})}
+
+
+
+Sets the broadcast address for the lookup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em networks} & A string pointer to a broadcast address. eg\+: \char`\"{}192.\+168.\+100.\+255,192.\+168.\+101.\+255\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lookup.\+hpp\item 
+src/lookup.\+cpp\end{DoxyCompactItemize}
