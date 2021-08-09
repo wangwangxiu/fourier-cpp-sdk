@@ -2,7 +2,7 @@
 
 [![Action Status](https://github.com/AMBERobotics/amber_cpp_sdk/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/AMBERobotics/amber_cpp_sdk/actions/workflows/main.yml)
 
-## 环境
+## 环境依赖
 
 git
 
@@ -51,7 +51,6 @@ ELSEIF (UNIX)
 ENDIF ()
 
 target_link_libraries(${PROJECT_NAME}
-    # 链接动态库
     PRIVATE amber amberc++
 )
 ```
