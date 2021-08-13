@@ -56,7 +56,4 @@ Makefile
 CMakeSettings.json
 
 # dll
-amber/lib/win_x64/amber.dll.manifest
-amber/lib/win_x64/amber.exp
-amber/lib/win_x64/amber.ilk
-amber/lib/win_x64/amber.pdb
+amber/lib/
