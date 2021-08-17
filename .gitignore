@@ -53,6 +53,8 @@ Makefile
 /out
 /build
 /amber/aios/out
+/examples/bin
+/examples/project/cmake/build
 CMakeSettings.json
 
 # dll
