@@ -13,15 +13,32 @@ project (amber_cpp_api VERSION 0.4.0 LANGUAGES CXX)
 # add_definitions(-DDEBUG)
 
 # 指定头文件搜索路径
-include_directories(${PROJECT_SOURCE_DIR}/amber/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/amber/include)
 
-link_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/win_x64
-    ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/mac_x86_64
-    ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/linux_armv7l
-    ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/linux_x86_64
-)
 
+# 跨平台引入库目录头文件
+IF (WIN32)
+    link_directories(
+        ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/win_x64
+    )
+ELSEIF (APPLE)
+    link_directories(
+        ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/mac_x86_64
+    )
+ELSEIF (UNIX)
+    EXECUTE_PROCESS( COMMAND uname -m COMMAND tr -d '\n' OUTPUT_VARIABLE ARCHITECTURE )
+    if( ${ARCHITECTURE} STREQUAL  "armv7l" )
+        link_directories(
+            ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/linux_armv7l
+        )
+    elseif( ${ARCHITECTURE} STREQUAL  "x86_64" )
+        link_directories(
+            ${CMAKE_CURRENT_SOURCE_DIR}/amber/lib/linux_x86_64
+        )
+    else()
+        message( "ERROR: Platform architecture mismatch" )
+    endif()
+ENDIF ()
 
 # 编译静态库
 set(amber_cpp_src
@@ -31,7 +48,7 @@ set(amber_cpp_src
     src/group.cpp
     src/version.cpp
 )
-    
+
 # 编译库
 add_library(_amberc++-obj OBJECT ${amber_cpp_src})
 add_library(amberc++ SHARED $<TARGET_OBJECTS:_amberc++-obj>)
@@ -57,3 +74,8 @@ set_target_properties(_amberc++-obj amberc++ amberc++-static PROPERTIES
 if (WIN32)
   set_target_properties(amberc++ PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 endif()
+
+set_property(TARGET amberc++ amberc++-static PROPERTY INTERFACE_LINK_LIBRARIES
+    $<$<BOOL:${UNIX}>:m pthread>
+    $<$<BOOL:${WIN32}>:kernel32>
+)
