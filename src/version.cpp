@@ -10,6 +10,7 @@ VersionNumber getCVersion() {
   return VersionNumber(maj, min, rev);
 }
 
+// amberc++ VERSION
 VersionNumber getCppVersion() { return VersionNumber(0, 4, 0); }
 
 } // namespace Amber
