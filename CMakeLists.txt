@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 
 # 项目名称
 cmake_policy(SET CMP0048 NEW)
-project (amber_cpp_api VERSION 0.4.0 LANGUAGES CXX)
+project (amber_cpp_api VERSION 0.4.1 LANGUAGES CXX)
 
 
 # 添加编译宏

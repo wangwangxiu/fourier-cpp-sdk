@@ -152,7 +152,7 @@ private:
      */
     AmberLookupPtr lookup_;
 
-    static const int32_t DEFAULT_TIMEOUT = 2000;
+    static const int32_t DEFAULT_TIMEOUT = 500;
 };
 
 }

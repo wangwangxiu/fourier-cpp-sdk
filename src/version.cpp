@@ -11,6 +11,6 @@ VersionNumber getCVersion() {
 }
 
 // amberc++ VERSION
-VersionNumber getCppVersion() { return VersionNumber(0, 4, 0); }
+VersionNumber getCppVersion() { return VersionNumber(0, 4, 1); }
 
 } // namespace Amber
