@@ -9,7 +9,8 @@ namespace Amber {
  */
 class VersionNumber {
 public:
-  VersionNumber(int major, int minor, int revision) : major_(major), minor_(minor), revision_(revision) {}
+  VersionNumber(int major, int minor, int revision)
+      : major_(major), minor_(minor), revision_(revision) {}
   int getMajor() { return major_; }
   int getMinor() { return minor_; }
   int getRevision() { return revision_; }
@@ -21,8 +22,8 @@ private:
 };
 
 /**
- * @brief Returns the version numbers for the Amber C API that is wrapped by this
- * Amber C++ API.
+ * @brief Returns the version numbers for the Amber C API that is wrapped by
+ * this Amber C++ API.
  */
 VersionNumber getCVersion();
 
