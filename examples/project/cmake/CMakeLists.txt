@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(amber_cpp_examples)
+project(fourier_cpp_examples)
 
 set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 get_filename_component(ROOT_DIR "${ROOT_DIR}" REALPATH)
@@ -9,23 +9,23 @@ if("${CMAKE_BUILD_TYPE}" STREQUAL "")
   set(CMAKE_BUILD_TYPE Debug)
 endif()
 
-set(AMBER_DIR ${ROOT_DIR})
+set(FOURIER_DIR ${ROOT_DIR})
 
-set(amber_cpp_build_dir amber-cpp-${CMAKE_BUILD_TYPE})
-string(TOLOWER ${amber_cpp_build_dir} amber_cpp_build_dir)
-get_filename_component(amber_cpp_build_dir "${CMAKE_CURRENT_BINARY_DIR}/${amber_cpp_build_dir}" REALPATH)
+set(fourier_cpp_build_dir fourier-cpp-${CMAKE_BUILD_TYPE})
+string(TOLOWER ${fourier_cpp_build_dir} fourier_cpp_build_dir)
+get_filename_component(fourier_cpp_build_dir "${CMAKE_CURRENT_BINARY_DIR}/${fourier_cpp_build_dir}" REALPATH)
 
-add_subdirectory(${AMBER_DIR} ${amber_cpp_build_dir})
+add_subdirectory(${FOURIER_DIR} ${fourier_cpp_build_dir})
 
 # 添加库目录
 include_directories(${ROOT_DIR}/src)
-include_directories(${ROOT_DIR}/amber/include)
+include_directories(${ROOT_DIR}/fourier/include)
 
 link_directories(
-    ${ROOT_DIR}/amber/lib/win_x64
-    ${ROOT_DIR}/amber/lib/mac_x86_64
-    ${ROOT_DIR}/amber/lib/linux_armv7l
-    ${ROOT_DIR}/amber/lib/linux_x86_64
+    ${ROOT_DIR}/fourier/lib/win_x64
+    ${ROOT_DIR}/fourier/lib/mac_x86_64
+    ${ROOT_DIR}/fourier/lib/linux_armv7l
+    ${ROOT_DIR}/fourier/lib/linux_x86_64
 )
 
 # 构建AIOS例子
@@ -33,7 +33,8 @@ SET(AIOS_SOURCES
   ${ROOT_DIR}/examples/src/01_lookup.cpp
   ${ROOT_DIR}/examples/src/03_feedback.cpp
   ${ROOT_DIR}/examples/src/04_command.cpp
-  ${ROOT_DIR}/examples/src/05_latency_test.cpp
+  ${ROOT_DIR}/examples/src/05_feedback_command_async.cpp
+  ${ROOT_DIR}/examples/src/06_latency_test.cpp
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../bin)
@@ -45,9 +46,9 @@ foreach (EXAMPLE ${AIOS_SOURCES})
   add_executable(${EX_NAME} ${EXAMPLE})
 
   # 链接静态库
-  target_link_libraries(${EX_NAME} amberc++-static)
+  target_link_libraries(${EX_NAME} fourierc++-static)
 
-  target_link_libraries(${EX_NAME} amber)
+  target_link_libraries(${EX_NAME} fourier)
 
   # 创建日志目录，以备示例记录数据
   add_custom_command(TARGET ${EX_NAME} POST_BUILD

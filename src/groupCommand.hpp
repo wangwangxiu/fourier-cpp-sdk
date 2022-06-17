@@ -1,17 +1,18 @@
 #pragma once
 
-#include "aios.h"
 #include <memory>
 #include <vector>
 
-namespace Amber {
+#include "aios.h"
+
+namespace Fourier {
 
 /**
  * @brief A list of Command objects appropriate for sending to a Group of
  * modules; the size() must match the number of modules in the group.
  */
 class GroupCommand final {
-public:
+ public:
   /**
    * @brief Create a group command with the specified number of modules.
    */
@@ -30,12 +31,12 @@ public:
   /**
    * @brief Access the command for an individual module.
    */
-  AmberCommandPtr operator[](size_t index);
+  FourierCommandPtr operator[](size_t index);
 
   /**
    * @brief Access the command for an individual module.
    */
-  const AmberCommandPtr operator[](size_t index) const;
+  const FourierCommandPtr operator[](size_t index) const;
 
   /**
    * @brief Clears all data in this GroupCommand object; this returns to the
@@ -123,8 +124,8 @@ public:
    *
    * Note that if the vector is not the correct link, no action is taken.
    */
-  void
-  setMontionCtrlConfig(const std::vector<MotionControllerConfig *> &config);
+  void setMontionCtrlConfig(
+      const std::vector<MotionControllerConfig *> &config);
 
   /**
    * @brief Convenience function for setting setMotorConfig commands from
@@ -168,23 +169,31 @@ public:
   // For latency test
   void setLatencyTest(const std::vector<bool> &flag);
 
-public:
+  /******* fw2 .0 *******/
+  void setInputPositionPt(const std::vector<PosPtInfo> &param);
+
+  void setInputVelocityPt(const std::vector<float> &param);
+
+  void setInputTorquePt(const std::vector<float> &param);
+  /******* fw2 .0 *******/
+
+ public:
   /**
    * C-style group command object.
    * NOTE: this should not be used except by library functions!
    */
-  AmberGroupCommandPtr internal_;
+  FourierGroupCommandPtr internal_;
 
   /**
    * The number of modules in this group command.
    */
   const size_t number_of_modules_;
 
-private:
+ private:
   /**
    * The list of Command subobjects
    */
-  std::vector<AmberCommandPtr> commands_;
+  std::vector<FourierCommandPtr> commands_;
 };
 
-} // namespace Amber
+}  // namespace Fourier

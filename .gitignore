@@ -50,12 +50,13 @@ Makefile
 
 # 
 .vs
+.vscode
 /out
 /build
-/amber/aios/out
+/fourier/aios/out
 /examples/bin
 /examples/project/cmake/build
 CMakeSettings.json
 
 # dll
-amber/lib/
+fourier/lib/

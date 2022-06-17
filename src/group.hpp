@@ -1,12 +1,13 @@
 #pragma once
 
-#include "aios.h"
 #include <functional>
 #include <memory>
 #include <mutex>
 #include <vector>
 
-namespace Amber {
+#include "aios.h"
+
+namespace Fourier {
 
 class GroupFeedback;
 class GroupCommand;
@@ -14,17 +15,17 @@ class GroupCommand;
 using GroupFeedbackHandler = std::function<void(const GroupFeedback &)>;
 
 /**
- * @brief Represents a group of physical Amber actuator, and allows Command,
+ * @brief Represents a group of physical Fourier actuator, and allows Command,
  * Feedback, and Info objects to be sent to and recieved from the actuator.
  */
 class Group final {
-public:
+ public:
   /**
    * Creates a group from the underlying C-style group object. This should
    * only be called to create groups from the lookup class, not from user
    * code!
    */
-  Group(AmberGroupPtr group, float initial_feedback_frequency = 0.0f,
+  Group(FourierGroupPtr group, float initial_feedback_frequency = 0.0f,
         int32_t initial_command_lifetime = 0);
 
   /**
@@ -66,7 +67,8 @@ public:
    * @returns @c true if feedback was request was successfully sent, otherwise
    *  @c false on failure (i.e., connection error).
    */
-  bool sendFeedbackRequest(AmberFeedbackCode feedbackCode = AmberFeedbackAll);
+  bool sendFeedbackRequest(
+      FourierFeedbackCode feedbackCode = FourierFeedbackAll);
 
   /**
    * @brief Returns the most recently stored feedback from a sent feedback
@@ -115,13 +117,13 @@ public:
   /**
    * @brief Gets the actuator error message
    */
-  AmberFeedbackErrorPtr getError(int idx);
+  FourierFeedbackErrorPtr getError(int idx);
 
-private:
+ private:
   /**
    * C-style group object
    */
-  AmberGroupPtr internal_;
+  FourierGroupPtr internal_;
 
   /**
    * The number of modules in this group.
@@ -141,16 +143,16 @@ private:
   /**
    * TODO:
    */
-  friend void callbackWrapper(AmberGroupFeedbackPtr group_feedback,
+  friend void callbackWrapper(FourierGroupFeedbackPtr group_feedback,
                               void *user_data);
 
   /**
    * TODO:
    */
-  void callAttachedHandlers(AmberGroupFeedbackPtr group_feedback);
+  void callAttachedHandlers(FourierGroupFeedbackPtr group_feedback);
 
-public:
+ public:
   static const int32_t DEFAULT_TIMEOUT_MS = 500;
 };
 
-} // namespace Amber
+}  // namespace Fourier

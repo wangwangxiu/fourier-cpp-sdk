@@ -3,7 +3,7 @@
 #include <string>
 
 // clang-format off
-#define AMBER_DISABLE_COPY_MOVE(Class) \
+#define FOURIER_DISABLE_COPY_MOVE(Class) \
 /* Disable copy constructor. */ \
 Class(const Class& other) = delete; \
 /* Disable move constructor. */ \
@@ -13,7 +13,7 @@ Class& operator= (const Class& other) = delete; \
 /* Disable move assigment operator. */ \
 Class& operator= (Class&& other) = delete;
 
-#define AMBER_DISABLE_COPY(Class) \
+#define FOURIER_DISABLE_COPY(Class) \
 /* Disable copy constructor. */ \
 Class(const Class& other) = delete; \
 /* Disable copy assigment operator. */ \

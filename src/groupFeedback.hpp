@@ -1,16 +1,17 @@
 #pragma once
 
-#include "aios.h"
 #include <vector>
 
-namespace Amber {
+#include "aios.h"
+
+namespace Fourier {
 
 /**
  * @brief A list of Feedback objects that can be received from a Group of
  * modules; the size() must match the number of modules in the group.
  */
 class GroupFeedback final {
-public:
+ public:
   /**
    * @brief Create a group feedback with the specified number of modules.
    */
@@ -19,7 +20,7 @@ public:
   /**
    * TODO:
    */
-  GroupFeedback(AmberGroupFeedbackPtr group_feedback);
+  GroupFeedback(FourierGroupFeedbackPtr group_feedback);
 
   /**
    * @brief Destructor cleans up group feedback object as necessary.
@@ -34,16 +35,16 @@ public:
   /**
    * @brief Access the feedback for an individual module.
    */
-  const AmberFeedbackPtr &operator[](size_t index) const;
+  const FourierFeedbackPtr &operator[](size_t index) const;
 
-public:
+ public:
   /**
    * C-style group feedback object.
    * NOTE: this should not be used except by library functions!
    */
-  AmberGroupFeedbackPtr internal_;
+  FourierGroupFeedbackPtr internal_;
 
-private:
+ private:
   /**
    * True if this object is responsible for creating and destroying the
    * underlying C pointer; false otherwise.
@@ -58,7 +59,7 @@ private:
   /**
    * The list of Feedback subobjects
    */
-  std::vector<AmberFeedbackPtr> feedbacks_;
+  std::vector<FourierFeedbackPtr> feedbacks_;
 };
 
-} // namespace Amber
+}  // namespace Fourier

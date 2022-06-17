@@ -4,6 +4,7 @@
 #include <iostream>
 #include <thread>
 
+#include "groupCommand.hpp"
 #include "groupFeedback.hpp"
 #include "lookup.hpp"
 
@@ -79,44 +80,55 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  int num_modules = group->size();
+  fourierSetLogLevel("ERROR");
 
-  // Create a group feedback object; this will be filled in during the request.
-  Fourier::GroupFeedback feedback(num_modules);
+  Fourier::GroupFeedback feedback(group->size());
 
-  // In a loop, send requests for feedback to the group and wait for responses.
-  long timeout_ms = 1000;
-  float period_s = 0.25f;
-  group->setFeedbackFrequencyHz(500);
-  for (int i = 0; i < 500; i++) {
-    StartTimeChrono(main);
-    // group->sendFeedbackRequest(FourierFeedbackCVP);
-    // group->sendFeedbackRequest();
-    auto t = intervalTimeStart();
-    if (group->getNextFeedback(feedback, timeout_ms)) {
-      for (size_t mod_idx = 0; mod_idx < feedback.size(); ++mod_idx) {
-        if (feedback[mod_idx]->position !=
-            std::numeric_limits<float>::quiet_NaN()) {
-          std::cout << "i:" << i << "  " << feedback[mod_idx]->position << "  "
-                    << feedback[mod_idx]->velocity << "  "
-                    << feedback[mod_idx]->current << "  ";
-        }
-        std::cout << std::endl;
+  Fourier::GroupCommand group_command(group->size());
+
+  std::vector<float> enable_status(group->size(),
+                                   std::numeric_limits<float>::quiet_NaN());
+  for (int i = 0; i < group->size(); ++i) {
+    enable_status[i] = 1;
+  }
+  group_command.enable(enable_status);
+  group->sendCommand(group_command);
+  // std::this_thread::sleep_for(std::chrono::milliseconds(20));
+
+  auto start = std::chrono::system_clock::now();
+  std::chrono::duration<double> t(std::chrono::system_clock::now() - start);
+  double duration = 1;
+  std::vector<float> v_pos;
+  std::vector<PosPtInfo> pos_pt_infos;
+  while (t.count() < duration) {
+    // StartTimeChrono(cycle);
+    t = std::chrono::system_clock::now() - start;
+
+    group->getNextFeedback(feedback);
+    for (size_t mod_idx = 0; mod_idx < feedback.size(); ++mod_idx) {
+      if (feedback[mod_idx]->position !=
+          std::numeric_limits<float>::quiet_NaN()) {
+        PosPtInfo info;
+        info.pos = feedback[mod_idx]->position + 5;
+        pos_pt_infos.push_back(info);
+        // std::cout << "pos:" << feedback[mod_idx]->position << "  "
+        //           << "vel:" << feedback[mod_idx]->velocity << "  "
+        //           << "cur:" << feedback[mod_idx]->current << "  ";
       }
-    } else {
-      std::cout << "Received no feedback from group!" << std::endl;
+      // std::cout << std::endl;
     }
-    intervalTimeEnd(t, 500);
-    EndTimeChrono(main);
+
+    group_command.setInputPositionPt(pos_pt_infos);
+    group->sendCommand(group_command);
+    std::this_thread::sleep_for(std::chrono::milliseconds(2));
+    // EndTimeChrono(cycle);
   }
 
-  group->setFeedbackFrequencyHz(0);
-  std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+  for (int i = 0; i < group->size(); ++i) {
+    enable_status[i] = 0;
+  }
+  group_command.enable(enable_status);
+  group->sendCommand(group_command);
 
-  group->setFeedbackFrequencyHz(100);
-  std::this_thread::sleep_for(std::chrono::milliseconds(30));
-
-  // group->setFeedbackFrequencyHz(0);
-  // NOTE: destructors automatically clean up remaining objects
   return 0;
 }

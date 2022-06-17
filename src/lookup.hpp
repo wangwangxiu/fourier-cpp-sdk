@@ -1,11 +1,11 @@
 #pragma once
+#include <memory>
+
 #include "aios.h"
 #include "group.hpp"
 #include "util.hpp"
 
-#include <memory>
-
-namespace Amber {
+namespace Fourier {
 
 /**
  * @brief Maintains a registry of network-connected modules and returns Group
@@ -14,7 +14,7 @@ namespace Amber {
  * Only one Lookup object is needed per application.
  */
 class Lookup final {
-public:
+ public:
   /**
    * @brief Creates a Lookup object which can create Module and Group
    * references.
@@ -52,9 +52,8 @@ public:
    * time, or reference to a newly allocated group object corresponding to
    * the given parameters otherwise.
    */
-  std::shared_ptr<Group>
-  getGroupFromFamily(const std::string &family,
-                     int32_t timeout_ms = DEFAULT_TIMEOUT);
+  std::shared_ptr<Group> getGroupFromFamily(
+      const std::string &family, int32_t timeout_ms = DEFAULT_TIMEOUT);
 
   /**
    * @brief Gets the rate [Hz] at which "discovery" packets are broadcast.
@@ -80,18 +79,18 @@ public:
       std::string serial_number_;
     };
 
-  private:
+   private:
     /**
      * \internal C-style lookup entry list object
      */
-    AmberLookupEntryListPtr lookup_list_;
+    FourierLookupEntryListPtr lookup_list_;
 
     /**
      * \internal Entry list iterator implementation
      * (see http://anderberg.me/2016/07/04/c-custom-iterators/)
      */
     class Iterator final {
-    public:
+     public:
       // Iterator traits (not from std::iterator to be C++17 compliant)
       using value_type = Entry;
       using difference_type = int;
@@ -112,16 +111,16 @@ public:
       bool operator==(const Iterator &rhs) const;
       bool operator!=(const Iterator &rhs) const;
 
-    private:
+     private:
       const EntryList &list_;
       size_t current_{0};
     };
 
-  public:
+   public:
     /**
      * \internal Creates entry list from internal C-style object.
      */
-    EntryList(AmberLookupEntryListPtr lookup_list)
+    EntryList(FourierLookupEntryListPtr lookup_list)
         : lookup_list_(lookup_list) {}
 
     ~EntryList() noexcept;
@@ -133,22 +132,22 @@ public:
     Iterator begin() const;
     Iterator end() const;
 
-  private:
+   private:
     /**
      * Disable copy and move constructors and assignment operators
      */
-    AMBER_DISABLE_COPY_MOVE(EntryList)
+    FOURIER_DISABLE_COPY_MOVE(EntryList)
   };
 
   std::shared_ptr<EntryList> getEntryList();
 
-private:
+ private:
   /**
    * \internal C-style lookup object
    */
-  AmberLookupPtr lookup_;
+  FourierLookupPtr lookup_;
 
   static const int32_t DEFAULT_TIMEOUT = 500;
 };
 
-} // namespace Amber
+}  // namespace Fourier
