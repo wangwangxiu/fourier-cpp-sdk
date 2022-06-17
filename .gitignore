@@ -58,5 +58,3 @@ Makefile
 /examples/project/cmake/build
 CMakeSettings.json
 
-# dll
-fourier/lib/
