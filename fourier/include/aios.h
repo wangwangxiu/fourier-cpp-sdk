@@ -206,8 +206,8 @@ typedef struct Feedback_ *FourierFeedbackPtr;
 
 typedef struct PosPtInfo_ {
   float pos;
-  short vel;
-  short torque;
+  float vel;
+  float torque;
 } PosPtInfo;
 
 typedef struct Command_ {

@@ -11,6 +11,6 @@ VersionNumber getCVersion() {
 }
 
 // fourierc++ VERSION
-VersionNumber getCppVersion() { return VersionNumber(0, 5, 0); }
+VersionNumber getCppVersion() { return VersionNumber(0, 6, 0); }
 
 }  // namespace Fourier

@@ -10,62 +10,6 @@
 
 using namespace Fourier;
 
-// for test
-#ifdef WIN32
-#include <WS2tcpip.h>
-#include <winsock2.h>
-#pragma comment(lib, "ws2_32.lib")
-#define DllExport __declspec(dllexport)
-#else
-#include <arpa/inet.h>
-#include <sys/time.h>
-#include <unistd.h>
-#endif
-
-#include <time.h>
-const timeval intervalTimeStart() {
-  timeval tv_last;
-  gettimeofday(&tv_last, NULL);
-  return tv_last;
-}
-
-double intervalTimeEnd(const timeval &tv_last, const float &frequency) {
-  float interval_time;
-  if (frequency == 0) {
-    interval_time = 0;
-  } else {
-    interval_time = 1.0 / frequency;
-  }
-  long double delay_time = interval_time * 1000000;
-  long double time = 0;
-  timeval now_time;
-  while (true) {
-    gettimeofday(&now_time, NULL);
-    time = ((now_time.tv_sec - tv_last.tv_sec) * 1000000 +
-            (now_time.tv_usec - tv_last.tv_usec));
-    if (time >= delay_time) {
-      break;
-    }
-    std::this_thread::sleep_for(std::chrono::microseconds(1));
-  }
-  return time / 1000;
-}
-
-#define StartTimeChrono(funName)                                \
-  std::chrono::microseconds ms##funName =                       \
-      std::chrono::duration_cast<std::chrono::microseconds>(    \
-          std::chrono::system_clock::now().time_since_epoch()); \
-  long start##funName = ms##funName.count();
-
-#define EndTimeChrono(funName)                                                \
-  ms##funName = std::chrono::duration_cast<std::chrono::microseconds>(        \
-      std::chrono::system_clock::now().time_since_epoch());                   \
-  long end##funName = ms##funName.count();                                    \
-  double ms_time = (end##funName - start##funName) / 1000.0;                  \
-  std::cout << "The function " << #funName << " runs for " << ms_time << "ms" \
-            << std::endl;
-// for test
-
 int main() {
   std::string str("192.168.2.255");
   // After construction,start the background thread lookup actuator
@@ -134,10 +78,8 @@ int main() {
   // EndTimeChrono(setVelocity);
   std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
-  StartTimeChrono(zero);
   group_command.setInputVelocityPt(zero);
   group->sendCommand(group_command);
-  EndTimeChrono(zero);
 
   // group_command.setCurrent(currents);
   // group->sendCommand(group_command);
