@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lookup_46',['Lookup',['../class_amber_1_1_lookup.html',1,'Amber']]]
+  ['lookup_0',['Lookup',['../class_fourier_1_1_lookup.html',1,'Fourier']]]
 ];

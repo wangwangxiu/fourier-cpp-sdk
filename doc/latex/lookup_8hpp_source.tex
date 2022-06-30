@@ -1,0 +1,95 @@
+\hypertarget{lookup_8hpp_source}{}\doxysection{lookup.\+hpp}
+\label{lookup_8hpp_source}\index{D:/ws/Fourier/fourier-\/cpp/src/lookup.hpp@{D:/ws/Fourier/fourier-\/cpp/src/lookup.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}aios.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}group.hpp"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}util.hpp"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }Fourier \{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_fourier_1_1_lookup}{Lookup}} final \{}
+\DoxyCodeLine{17  \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{class_fourier_1_1_lookup_ad6e261ea7c7de062a81344deb7d285ff}{Lookup}}(std::string *addr = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32   \mbox{\hyperlink{class_fourier_1_1_lookup_a4aedeb89e737074016c23484cd876e8a}{\string~Lookup}}() \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fourier_1_1_lookup_a45f683c483d8dee1e19d1744d3ae01c2}{setNetWorks}}(std::string networks);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45   std::string \mbox{\hyperlink{class_fourier_1_1_lookup_a5cf0aef9b8b689784d1eeb60b461e533}{getCtrlBoxIP}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{55   std::shared\_ptr<Group> \mbox{\hyperlink{class_fourier_1_1_lookup_a147b2f406c8a606e69c1ee2dcbc427c4}{getGroupFromFamily}}(}
+\DoxyCodeLine{56       \textcolor{keyword}{const} std::string \&family, int32\_t timeout\_ms = DEFAULT\_TIMEOUT);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_fourier_1_1_lookup_a6e164e26be35f2f24e69ccf14e973827}{getLookupFrequencyHz}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{73   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fourier_1_1_lookup_ab8b0c020b4184733d48be479dce779bd}{setLookupFrequencyHz}}(\textcolor{keywordtype}{float} frequency);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keyword}{class }\mbox{\hyperlink{class_fourier_1_1_lookup_1_1_entry_list}{EntryList}} final \{}
+\DoxyCodeLine{76     \textcolor{keyword}{struct }Entry final \{}
+\DoxyCodeLine{77       std::string name\_;}
+\DoxyCodeLine{78       std::string family\_;}
+\DoxyCodeLine{79       std::string serial\_number\_;}
+\DoxyCodeLine{80     \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82    \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     FourierLookupEntryListPtr lookup\_list\_;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{92     \textcolor{keyword}{class }Iterator final \{}
+\DoxyCodeLine{93      \textcolor{keyword}{public}:}
+\DoxyCodeLine{94       \textcolor{comment}{// Iterator traits (not from std::iterator to be C++17 compliant)}}
+\DoxyCodeLine{95       \textcolor{keyword}{using }value\_type = Entry;}
+\DoxyCodeLine{96       \textcolor{keyword}{using }difference\_type = int;}
+\DoxyCodeLine{97       \textcolor{keyword}{using }pointer = Entry *;}
+\DoxyCodeLine{98       \textcolor{keyword}{using }reference = Entry;}
+\DoxyCodeLine{99       \textcolor{keyword}{using }iterator\_category = std::bidirectional\_iterator\_tag;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101       Iterator() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{102       \textcolor{keyword}{explicit} Iterator(\textcolor{keyword}{const} \mbox{\hyperlink{class_fourier_1_1_lookup_1_1_entry_list}{EntryList}} \&list, \textcolor{keywordtype}{size\_t} current);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104       reference operator*() \textcolor{keyword}{const};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106       Iterator \&operator++();}
+\DoxyCodeLine{107       Iterator operator++(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{108       Iterator \&operator-\/-\/();}
+\DoxyCodeLine{109       Iterator operator-\/-\/(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111       \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} Iterator \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{112       \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} Iterator \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114      \textcolor{keyword}{private}:}
+\DoxyCodeLine{115       \textcolor{keyword}{const} \mbox{\hyperlink{class_fourier_1_1_lookup_1_1_entry_list}{EntryList}} \&list\_;}
+\DoxyCodeLine{116       \textcolor{keywordtype}{size\_t} current\_\{0\};}
+\DoxyCodeLine{117     \};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119    \textcolor{keyword}{public}:}
+\DoxyCodeLine{123     \mbox{\hyperlink{class_fourier_1_1_lookup_1_1_entry_list}{EntryList}}(FourierLookupEntryListPtr lookup\_list)}
+\DoxyCodeLine{124         : lookup\_list\_(lookup\_list) \{\}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \mbox{\hyperlink{class_fourier_1_1_lookup_1_1_entry_list}{\string~EntryList}}() \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     Entry operator[](\textcolor{keywordtype}{size\_t} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{keywordtype}{size\_t} size() \textcolor{keyword}{const};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     Iterator begin() \textcolor{keyword}{const};}
+\DoxyCodeLine{133     Iterator end() \textcolor{keyword}{const};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135    \textcolor{keyword}{private}:}
+\DoxyCodeLine{139     FOURIER\_DISABLE\_COPY\_MOVE(\mbox{\hyperlink{class_fourier_1_1_lookup_1_1_entry_list}{EntryList}})}
+\DoxyCodeLine{140   \};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142   std::shared\_ptr<EntryList> getEntryList();}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144  \textcolor{keyword}{private}:}
+\DoxyCodeLine{148   FourierLookupPtr lookup\_;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150   \textcolor{keyword}{static} \textcolor{keyword}{const} int32\_t DEFAULT\_TIMEOUT = 500;}
+\DoxyCodeLine{151 \};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \}  \textcolor{comment}{// namespace Fourier}}
+
+\end{DoxyCode}

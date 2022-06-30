@@ -1,0 +1,30 @@
+\hypertarget{version_8hpp_source}{}\doxysection{version.\+hpp}
+\label{version_8hpp_source}\index{D:/ws/Fourier/fourier-\/cpp/src/version.hpp@{D:/ws/Fourier/fourier-\/cpp/src/version.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}aios.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{namespace }Fourier \{}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_fourier_1_1_version_number}{VersionNumber}} \{}
+\DoxyCodeLine{11  \textcolor{keyword}{public}:}
+\DoxyCodeLine{12   \mbox{\hyperlink{class_fourier_1_1_version_number}{VersionNumber}}(\textcolor{keywordtype}{int} major, \textcolor{keywordtype}{int} minor, \textcolor{keywordtype}{int} revision)}
+\DoxyCodeLine{13       : major\_(major), minor\_(minor), revision\_(revision) \{\}}
+\DoxyCodeLine{14   \textcolor{keywordtype}{int} getMajor() \{ \textcolor{keywordflow}{return} major\_; \}}
+\DoxyCodeLine{15   \textcolor{keywordtype}{int} getMinor() \{ \textcolor{keywordflow}{return} minor\_; \}}
+\DoxyCodeLine{16   \textcolor{keywordtype}{int} getRevision() \{ \textcolor{keywordflow}{return} revision\_; \}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18  \textcolor{keyword}{private}:}
+\DoxyCodeLine{19   \textcolor{keywordtype}{int} major\_;}
+\DoxyCodeLine{20   \textcolor{keywordtype}{int} minor\_;}
+\DoxyCodeLine{21   \textcolor{keywordtype}{int} revision\_;}
+\DoxyCodeLine{22 \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{28 \mbox{\hyperlink{class_fourier_1_1_version_number}{VersionNumber}} getCVersion();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33 \mbox{\hyperlink{class_fourier_1_1_version_number}{VersionNumber}} getCppVersion();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \}  \textcolor{comment}{// namespace Fourier}}
+
+\end{DoxyCode}

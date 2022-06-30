@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reboot_21',['reboot',['../class_amber_1_1_group_command.html#a34811f6f7f11d259759e93d44b1b6923',1,'Amber::GroupCommand']]],
-  ['resetlinearcount_22',['resetLinearCount',['../class_amber_1_1_group_command.html#ac21bd900664e65dd90ce5c1d504d9a1e',1,'Amber::GroupCommand']]]
+  ['reboot_0',['reboot',['../class_fourier_1_1_group_command.html#a8a4c44b447dffbd5ff40d249fe3fb2e4',1,'Fourier::GroupCommand']]],
+  ['resetlinearcount_1',['resetLinearCount',['../class_fourier_1_1_group_command.html#a65b97157fc100a34947c6cf931e93ccd',1,'Fourier::GroupCommand']]]
 ];

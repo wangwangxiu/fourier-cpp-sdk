@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['callbackwrapper_87',['callbackWrapper',['../class_amber_1_1_group.html#aeb667c64c137cd1def1223432c289175',1,'Amber::Group']]]
+  ['callbackwrapper_0',['callbackWrapper',['../class_fourier_1_1_group.html#a227b2aa72257b306fafdd58aa2ebfd9e',1,'Fourier::Group']]]
 ];

@@ -1,0 +1,38 @@
+\hypertarget{group_feedback_8hpp_source}{}\doxysection{group\+Feedback.\+hpp}
+\label{group_feedback_8hpp_source}\index{D:/ws/Fourier/fourier-\/cpp/src/groupFeedback.hpp@{D:/ws/Fourier/fourier-\/cpp/src/groupFeedback.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}aios.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }Fourier \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_fourier_1_1_group_feedback}{GroupFeedback}} final \{}
+\DoxyCodeLine{14  \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \mbox{\hyperlink{class_fourier_1_1_group_feedback_add9e16cdfa04fdfde1e3c5df8ad267dc}{GroupFeedback}}(\textcolor{keywordtype}{size\_t} number\_of\_modules);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{23   \mbox{\hyperlink{class_fourier_1_1_group_feedback_add9e16cdfa04fdfde1e3c5df8ad267dc}{GroupFeedback}}(FourierGroupFeedbackPtr group\_feedback);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28   \mbox{\hyperlink{class_fourier_1_1_group_feedback_ac6e6dd6e91a9b03b97fb249d9199e970}{\string~GroupFeedback}}() \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_fourier_1_1_group_feedback_aa8f45465cce991844fe72b55853d6546}{size}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38   \textcolor{keyword}{const} FourierFeedbackPtr \&\mbox{\hyperlink{class_fourier_1_1_group_feedback_afa214cc6ea00d5182433181c1466cc1a}{operator[]}}(\textcolor{keywordtype}{size\_t} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40  \textcolor{keyword}{public}:}
+\DoxyCodeLine{45   FourierGroupFeedbackPtr \mbox{\hyperlink{class_fourier_1_1_group_feedback_a68ec309c1b6086229e127d7a29cf143e}{internal\_}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47  \textcolor{keyword}{private}:}
+\DoxyCodeLine{52   \textcolor{keyword}{const} \textcolor{keywordtype}{bool} manage\_pointer\_lifetime\_;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{57   \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} number\_of\_modules\_;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{62   std::vector<FourierFeedbackPtr> feedbacks\_;}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \}  \textcolor{comment}{// namespace Fourier}}
+
+\end{DoxyCode}

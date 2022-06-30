@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['getctrlboxip_53',['getCtrlBoxIP',['../class_amber_1_1_lookup.html#a58f4295f8e3d5f6b3793a8e6569f917e',1,'Amber::Lookup']]],
-  ['geterror_54',['getError',['../class_amber_1_1_group.html#a623582fe05dd802d4657a6d722a67513',1,'Amber::Group::getError()'],['../class_amber_1_1_group_command.html#a23c361c7f24c5d8435a18c1443478041',1,'Amber::GroupCommand::getError()']]],
-  ['getfeedbackfrequencyhz_55',['getFeedbackFrequencyHz',['../class_amber_1_1_group.html#aa4bb46f87083b48c519b0cf439cdc550',1,'Amber::Group']]],
-  ['getgroupfromfamily_56',['getGroupFromFamily',['../class_amber_1_1_lookup.html#a2ef84c77a117a37b89fa7e10e07c65b6',1,'Amber::Lookup']]],
-  ['getlookupfrequencyhz_57',['getLookupFrequencyHz',['../class_amber_1_1_lookup.html#a5414c5a0b8c05cb7abe02b0d0f373650',1,'Amber::Lookup']]],
-  ['getnextfeedback_58',['getNextFeedback',['../class_amber_1_1_group.html#abc94738aad69d9ba14a26cd9ab802a16',1,'Amber::Group']]],
-  ['group_59',['Group',['../class_amber_1_1_group.html#a53d99ed7638b9a868ab24e446045d01d',1,'Amber::Group']]],
-  ['groupcommand_60',['GroupCommand',['../class_amber_1_1_group_command.html#a71c3316c52aabf081f13c2b3496a239f',1,'Amber::GroupCommand']]],
-  ['groupfeedback_61',['GroupFeedback',['../class_amber_1_1_group_feedback.html#a43d8594a6d5fec75319ab360bafd88bb',1,'Amber::GroupFeedback::GroupFeedback(size_t number_of_modules)'],['../class_amber_1_1_group_feedback.html#ac6a99c7cc5dd2dbb861f5cd32f0b290d',1,'Amber::GroupFeedback::GroupFeedback(AmberGroupFeedbackPtr group_feedback)']]]
+  ['getctrlboxip_0',['getCtrlBoxIP',['../class_fourier_1_1_lookup.html#a5cf0aef9b8b689784d1eeb60b461e533',1,'Fourier::Lookup']]],
+  ['geterror_1',['getError',['../class_fourier_1_1_group.html#a12f32a895c390794e38c216089aa86d5',1,'Fourier::Group::getError()'],['../class_fourier_1_1_group_command.html#a9739fb7fa38ac2106cc5c227b7a2da65',1,'Fourier::GroupCommand::getError()']]],
+  ['getfeedbackfrequencyhz_2',['getFeedbackFrequencyHz',['../class_fourier_1_1_group.html#a3241d2cfa4cb520e7733308af068040e',1,'Fourier::Group']]],
+  ['getgroupfromfamily_3',['getGroupFromFamily',['../class_fourier_1_1_lookup.html#a147b2f406c8a606e69c1ee2dcbc427c4',1,'Fourier::Lookup']]],
+  ['getlookupfrequencyhz_4',['getLookupFrequencyHz',['../class_fourier_1_1_lookup.html#a6e164e26be35f2f24e69ccf14e973827',1,'Fourier::Lookup']]],
+  ['getnextfeedback_5',['getNextFeedback',['../class_fourier_1_1_group.html#a3449b7d6cfd38fa7f59337fb4b112ebc',1,'Fourier::Group']]],
+  ['group_6',['Group',['../class_fourier_1_1_group.html#ae7dcad5e737224ae505e518c5662bf0d',1,'Fourier::Group']]],
+  ['groupcommand_7',['GroupCommand',['../class_fourier_1_1_group_command.html#a50f5613e7f29d2f91555688633bfab48',1,'Fourier::GroupCommand']]],
+  ['groupfeedback_8',['GroupFeedback',['../class_fourier_1_1_group_feedback.html#add9e16cdfa04fdfde1e3c5df8ad267dc',1,'Fourier::GroupFeedback::GroupFeedback(size_t number_of_modules)'],['../class_fourier_1_1_group_feedback.html#a428645ba291c5d50100e79df989b93f8',1,'Fourier::GroupFeedback::GroupFeedback(FourierGroupFeedbackPtr group_feedback)']]]
 ];
