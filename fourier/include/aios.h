@@ -77,11 +77,11 @@ typedef enum FourierCommandEnum {
   FourierCommandGetError,
   FourierCommandClearError,
 
-  FourierCommandResetLinearCount,         // Reset Linear Count
-  FourierCommandMontionControllerConfig,  // Motion Controller Config
-  FourierCommandMotorConfig,              // Motor Config
-  FourierCommandTrapTraj,                 // TRAP-TRAJ
-  FourierCommandSaveConfig,               // Save Config
+  FourierCommandResetLinearCount,        // Reset Linear Count
+  FourierCommandMotionControllerConfig,  // Motion Controller Config
+  FourierCommandMotorConfig,             // Motor Config
+  FourierCommandTrapTraj,                // TRAP-TRAJ
+  FourierCommandSaveConfig,              // Save Config
 
   FourierCommandNetworkSetting,  // network setting
 

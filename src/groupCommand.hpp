@@ -119,13 +119,12 @@ class GroupCommand final {
   void resetLinearCount(const std::vector<float> &linearCount);
 
   /**
-   * @brief Convenience function for setting setMontionCtrlConfig commands
+   * @brief Convenience function for setting setMotionCtrlConfig commands
    * from vectors.
    *
    * Note that if the vector is not the correct link, no action is taken.
    */
-  void setMontionCtrlConfig(
-      const std::vector<MotionControllerConfig *> &config);
+  void setMotionCtrlConfig(const std::vector<MotionControllerConfig *> &config);
 
   /**
    * @brief Convenience function for setting setMotorConfig commands from

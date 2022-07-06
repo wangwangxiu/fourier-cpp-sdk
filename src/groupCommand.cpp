@@ -102,10 +102,10 @@ void GroupCommand::resetLinearCount(const std::vector<float> &linearCount) {
   }
 }
 
-void GroupCommand::setMontionCtrlConfig(
+void GroupCommand::setMotionCtrlConfig(
     const std::vector<MotionControllerConfig *> &config) {
   if (config.size() != number_of_modules_) return;
-  fourierGroupCommandSetType(internal_, FourierCommandMontionControllerConfig);
+  fourierGroupCommandSetType(internal_, FourierCommandMotionControllerConfig);
   for (size_t i = 0; i < number_of_modules_; ++i) {
     commands_[i]->motion_ctrl_config = config[i];
   }
