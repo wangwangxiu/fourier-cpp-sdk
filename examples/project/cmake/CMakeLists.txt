@@ -45,6 +45,8 @@ foreach (EXAMPLE ${AIOS_SOURCES})
   # 编译可执行文件
   add_executable(${EX_NAME} ${EXAMPLE})
 
+  target_compile_features(${EX_NAME} PUBLIC cxx_std_14)
+
   # 链接静态库
   target_link_libraries(${EX_NAME} fourierc++-static)
 
