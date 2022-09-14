@@ -11,7 +11,7 @@
 using namespace Fourier;
 
 int main() {
-  std::string str("192.168.2.255");
+  std::string str("10.10.10.255");
   // After construction,start the background thread lookup actuator
   Lookup lookup(&str);
   // Wait 1 seconds for the module list to populate, and then print out its
