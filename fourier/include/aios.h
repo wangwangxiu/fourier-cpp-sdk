@@ -29,6 +29,7 @@ typedef enum MotorNumber {
  * Initialize the actuator state
  */
 typedef enum AxisState {
+  AXIS_STATE_UNKNOW = -1,
   AXIS_STATE_IDLE = 1,    // idle state
   AXIS_STATE_ENABLE = 8,  // enabling state
 } AxisState;
@@ -592,6 +593,12 @@ void fourierGroupCommandRelease(FourierGroupCommandPtr command);
 FourierFeedbackErrorPtr fourierGroupFeedbackError(FourierGroupPtr group,
                                                   int idx);
 
+/**
+ * @brief Set the log print level.
+ *
+ * @param mode "DEBUG" "INFO" "WARN" "ERROR"
+ * @return FourierStatusCode
+ */
 FourierStatusCode fourierSetLogLevel(const char *mode);
 
 /**

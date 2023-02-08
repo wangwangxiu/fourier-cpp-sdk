@@ -35,6 +35,11 @@ SET(AIOS_SOURCES
   ${ROOT_DIR}/examples/src/04_command.cpp
   ${ROOT_DIR}/examples/src/05_feedback_command_async.cpp
   ${ROOT_DIR}/examples/src/06_latency_test.cpp
+  ${ROOT_DIR}/examples/src/07_set_position_pt.cpp
+  ${ROOT_DIR}/examples/src/08_pos_pass_through.cpp
+  ${ROOT_DIR}/examples/src/reset_linear_count.cpp
+  ${ROOT_DIR}/examples/src/set_input_velocity_pt_for_fw2xx.cpp
+  ${ROOT_DIR}/examples/src/set_velocity_for_fw1xx.cpp
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../bin)
@@ -46,7 +51,7 @@ foreach (EXAMPLE ${AIOS_SOURCES})
   add_executable(${EX_NAME} ${EXAMPLE})
 
   target_compile_features(${EX_NAME} PUBLIC cxx_std_14)
-
+  
   # 链接静态库
   target_link_libraries(${EX_NAME} fourierc++-static)
 

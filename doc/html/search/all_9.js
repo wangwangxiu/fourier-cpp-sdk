@@ -7,7 +7,7 @@ var searchData=
   ['setcurrent_4',['setCurrent',['../class_fourier_1_1_group_command.html#ace6b626662f721853d7c9b8ae1a815fe',1,'Fourier::GroupCommand']]],
   ['setfeedbackfrequencyhz_5',['setFeedbackFrequencyHz',['../class_fourier_1_1_group.html#ac5fbe3f16a3a9db5492b5602cab94c3d',1,'Fourier::Group']]],
   ['setlookupfrequencyhz_6',['setLookupFrequencyHz',['../class_fourier_1_1_lookup.html#ab8b0c020b4184733d48be479dce779bd',1,'Fourier::Lookup']]],
-  ['setmontionctrlconfig_7',['setMontionCtrlConfig',['../class_fourier_1_1_group_command.html#a4404dff533ae3cfa9bb5f8fec5508054',1,'Fourier::GroupCommand']]],
+  ['setmotionctrlconfig_7',['setMotionCtrlConfig',['../class_fourier_1_1_group_command.html#aeeca6b8f0b4e37013e16b41144f17205',1,'Fourier::GroupCommand']]],
   ['setmotorconfig_8',['setMotorConfig',['../class_fourier_1_1_group_command.html#a301aea767cb0a2a4cd0bb12d3dd30aa5',1,'Fourier::GroupCommand']]],
   ['setnetworks_9',['setNetWorks',['../class_fourier_1_1_lookup.html#a45f683c483d8dee1e19d1744d3ae01c2',1,'Fourier::Lookup']]],
   ['setnetworksetting_10',['setNetworkSetting',['../class_fourier_1_1_group_command.html#ae120dcc50d1c2d5e6a738a5f3dac5231',1,'Fourier::GroupCommand']]],
